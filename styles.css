@@ -1,0 +1,73 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    font-family: 'Arial', sans-serif;
+    perspective: 1000px; /* Perspective for 3D effect */
+}
+
+.container {
+    text-align: center;
+}
+
+.message h1 {
+    font-size: 4em;
+    color: #ff6b6b;
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: rotateY(-90deg); /* Initial 3D rotation */
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+#teddyBear {
+    width: 200px;
+    height: auto;
+    opacity: 0;
+    transform: rotateY(-90deg); /* Initial 3D rotation */
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #ff4c4c;
+    transform: scale(1.1);
+}
+
+@keyframes fadeInAndRotate {
+    from {
+        opacity: 0;
+        transform: rotateY(-90deg);
+    }
+    to {
+        opacity: 1;
+        transform: rotateY(0);
+    }
+}
+
+#sorryMessage.animate {
+    animation: fadeInAndRotate 2s ease-in-out;
+}
+
+#teddyBear.animate {
+    animation: fadeInAndRotate 2s ease-in-out;
+}
+
+
+
+
+
+
